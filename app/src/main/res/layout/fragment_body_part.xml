@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- COMPLETED TODO (1) Create a layout file that displays one body part image named fragment_body_part.xml-->
+<!-- COMPLETED TF.01 TODO (1.1) Create a layout file that displays one body part image named fragment_body_part.xml-->
 <!-- This layout should contain a single ImageView-->
 <ImageView
     xmlns:android="http://schemas.android.com/apk/res/android"
