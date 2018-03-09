@@ -32,29 +32,35 @@ public class AndroidMeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
 
-        // COMPLETED TF.01 TODO (1.5) Create a new BodyPartFragment instance and display it using the FragmentManager
-        BodyPartFragment headFragment = new BodyPartFragment();
+        // COMPLETED TF.03 TODO (3.5) Only create new fragments when there is no previously saved state
+        if (savedInstanceState == null) {
 
-        // COMPLETED TF.02 TODO (2.4) Set the list of image id's for the head fragment and set the position to the second image in the list
-        headFragment.setmImageIds(AndroidImageAssets.getHeads());
-        headFragment.setmListIndex(1);
+            // COMPLETED TF.01 TODO (1.5) Create a new BodyPartFragment instance and display it using the FragmentManager
+            BodyPartFragment headFragment = new BodyPartFragment();
 
-        // Add the fragment to its container using a FragmentManager and a Transaction
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .add(R.id.head_container, headFragment)
-                .commit();
+            // COMPLETED TF.02 TODO (2.4) Set the list of image id's for the head fragment and set the position to the second image in the list
+            headFragment.setImageIds(AndroidImageAssets.getHeads());
+            headFragment.setListIndex(1);
 
-        // COMPLETED TF.02 TODO (2.5) Create and display the body and leg BodyPartFragments
-        BodyPartFragment bodyFragment = new BodyPartFragment();
-        fragmentManager.beginTransaction()
-                .add(R.id.body_container, bodyFragment)
-                .commit();
+            // Add the fragment to its container using a FragmentManager and a Transaction
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .add(R.id.head_container, headFragment)
+                    .commit();
 
-        BodyPartFragment legFragment = new BodyPartFragment();
-        fragmentManager.beginTransaction()
-                .add(R.id.leg_container, legFragment)
-                .commit();
+            // COMPLETED TF.02 TODO (2.5) Create and display the body and leg BodyPartFragments
+            BodyPartFragment bodyFragment = new BodyPartFragment();
+            bodyFragment.setImageIds(AndroidImageAssets.getBodies());
+            fragmentManager.beginTransaction()
+                    .add(R.id.body_container, bodyFragment)
+                    .commit();
+
+            BodyPartFragment legFragment = new BodyPartFragment();
+            legFragment.setImageIds(AndroidImageAssets.getLegs());
+            fragmentManager.beginTransaction()
+                    .add(R.id.leg_container, legFragment)
+                    .commit();
+        }
 
     }
 }
