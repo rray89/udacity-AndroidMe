@@ -19,15 +19,16 @@ import java.util.List;
 // In this class, you'll need to implement an empty constructor and the onCreateView method
 public class BodyPartFragment extends Fragment {
 
-    // TF.03 TODO (3.3) Create final Strings to store state information about the list of images and list index
+    // COMPLETED TF.03 TODO (3.3) Create final Strings to store state information about the list of images and list index
     public static final String IMAGE_ID_LIST = "image_ids";
     public static final String LIST_INDEX = "list_index";
 
     //Tag for logging
     private static final String TAG = "BodyPartFragment";
 
-    //Var to store a list of image resources and the index of the image that this fragment displays
+    //list to store a list of image resources and
     private List<Integer> mImageIds;
+    //the index of the image that this fragment displays
     private int mListIndex;
 
 
@@ -49,7 +50,7 @@ public class BodyPartFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
 
         //get a reference to the ImageView in the fragment layout
-        ImageView imageView = (ImageView) rootView.findViewById(R.id.iv_body_part);
+        final ImageView imageView = (ImageView) rootView.findViewById(R.id.iv_body_part);
 
         // COMPLETED TF.01 TODO (1.3) Show the first image in the list of head images
         if (mImageIds != null) {
@@ -69,10 +70,7 @@ public class BodyPartFragment extends Fragment {
                     }
                 }
             });
-
-
             imageView.setImageResource(mImageIds.get(mListIndex));
-
 
         } else { // Otherwise, create a Log statement that indicates that the list was not found
             Log.v(TAG, "This fragment has a null list of image ids. ");

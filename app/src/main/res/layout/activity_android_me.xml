@@ -38,12 +38,14 @@
             android:scaleType="centerInside" />
 
         <!--container for body and leg-->
-        <FrameLayout android:id="@+id/body_container"
+        <FrameLayout
+            android:id="@+id/body_container"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerInside"/>
 
-        <FrameLayout android:id="@+id/leg_container"
+        <FrameLayout
+            android:id="@+id/leg_container"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerInside"/>
