@@ -19,7 +19,7 @@
 
     <!-- LinearLayout for holding three Android-Me images -->
     <LinearLayout
-        android:id="@+id/android_me_linear_layout"
+        android:id="@+id/ll_android_me"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
@@ -32,20 +32,20 @@
         <!-- COMPLETED TF.01 TODO (1.4) Create a container to hold the head BodyPartFragment of the custom Android -->
         <!--The container should be 180dp in height -->
         <FrameLayout
-            android:id="@+id/head_container"
+            android:id="@+id/fl_head_container"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerInside" />
 
         <!--container for body and leg-->
         <FrameLayout
-            android:id="@+id/body_container"
+            android:id="@+id/fl_body_container"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerInside"/>
 
         <FrameLayout
-            android:id="@+id/leg_container"
+            android:id="@+id/fl_leg_container"
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerInside"/>

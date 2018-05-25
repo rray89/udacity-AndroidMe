@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android_Me</string>
+    <string name="content_description">Image to display body part</string>
 </resources>

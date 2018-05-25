@@ -24,7 +24,9 @@ public class BodyPartFragment extends Fragment {
     public static final String LIST_INDEX = "list_index";
 
     //Tag for logging
-    private static final String TAG = "BodyPartFragment";
+    //private static final String TAG = "BodyPartFragment";
+    private static final String TAG = BodyPartFragment.class.getSimpleName();
+
 
     //list to store a list of image resources and
     private List<Integer> mImageIds;
@@ -50,7 +52,7 @@ public class BodyPartFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_body_part, container, false);
 
         //get a reference to the ImageView in the fragment layout
-        final ImageView imageView = (ImageView) rootView.findViewById(R.id.iv_body_part);
+        final ImageView imageView = rootView.findViewById(R.id.iv_body_part);
 
         // COMPLETED TF.01 TODO (1.3) Show the first image in the list of head images
         if (mImageIds != null) {
