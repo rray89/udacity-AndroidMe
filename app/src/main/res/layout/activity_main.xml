@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- COMPLETED TODO (4.4) Create a new Activity named MainActivity and a corresponding layout file that displays a MasterListFragment-->
+<!-- Remember, to display a static fragment in a layout file, use the <fragment> tag-->
+
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="com.example.android.android_me.ui.MasterListFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/master_list_fragment">
+</fragment>

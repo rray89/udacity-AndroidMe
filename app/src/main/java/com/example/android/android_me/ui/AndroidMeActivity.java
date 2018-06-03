@@ -27,6 +27,9 @@ import com.example.android.android_me.data.AndroidImageAssets;
 public class AndroidMeActivity extends AppCompatActivity {
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
