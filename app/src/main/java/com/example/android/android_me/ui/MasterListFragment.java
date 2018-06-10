@@ -5,6 +5,7 @@
 package com.example.android.android_me.ui;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,31 @@ import com.example.android.android_me.data.AndroidImageAssets;
 // This fragment displays all of the AndroidMe images in one large list
 // The list appears as a grid of images
 public class MasterListFragment extends Fragment {
+
+    // COMPLETED TODO (5.1) Define a new interface OnImageClickListener that triggers a callback in the host activity
+        // The callback is a method named onImageSelected(int position) that contains information about
+        // which position on the grid of images a user has clicked
+    OnImageClickListener mCallBack;
+
+    // OnImageClickListener interface, calls a method in the host activity named onImageSelected
+    public interface OnImageClickListener {
+        void onImageSelected(int position);
+    }
+
+
+    // COMPLETED TODO (5.2) Override onAttach to make sure that the container activity has implemented the callback
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        // This makes sure that the host activity has implemented the callback interface
+        // If not, it throws an exception
+        try {
+            mCallBack = (OnImageClickListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement OnImageClickListener");
+        }
+    }
 
     public MasterListFragment() {}
 
@@ -38,4 +64,8 @@ public class MasterListFragment extends Fragment {
 
         return rootView;
     }
+
+
+
+
 }
