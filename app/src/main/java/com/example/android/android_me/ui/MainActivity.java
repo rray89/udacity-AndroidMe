@@ -2,6 +2,7 @@ package com.example.android.android_me.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.example.android.android_me.R;
 
@@ -15,6 +16,9 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
     }
 
-    // TODO (5.5) Define the behavior for onImageSelected; create a Toast that displays the position clicked
+    // COMPLETED TODO (5.5) Define the behavior for onImageSelected; create a Toast that displays the position clicked
+    public void onImageSelected(int position) {
+        Toast.makeText(this, "Position clicked = " + position, Toast.LENGTH_SHORT).show();
+    }
 
 }
