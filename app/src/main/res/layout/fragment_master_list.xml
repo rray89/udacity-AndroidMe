@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- COMPLETED TODO (4.1) Create a fragment_master_list.xml layout file to display all our images; this should be a GridView-->
-<!-- COMPLETED TODO (6.1) Turn this into a LinearLayout and add a "Next" button at the bottom of the gridview -->
+<!-- COMPLETED TODO (6.1) Turn this into a LinearLayout and add a "Next" button at the bottom of the GridView -->
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
     <GridView
-        android:id="@+id/grid_view_images"
+        android:id="@+id/gv_images"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="7"
@@ -22,7 +22,6 @@
         android:padding="16dp"
         android:stretchMode="columnWidth"
         android:verticalSpacing="8dp">
-
     </GridView>
 
     <Button

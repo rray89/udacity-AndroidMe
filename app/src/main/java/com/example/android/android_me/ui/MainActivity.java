@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
         if (findViewById(R.id.ll_android_me) != null) {
             ifTwoPane = true;
 
-            GridView gridView = findViewById(R.id.grid_view_images);
+            GridView gridView = findViewById(R.id.gv_images);
             gridView.setNumColumns(2);
 
             Button nextButton = findViewById(R.id.next_btn);

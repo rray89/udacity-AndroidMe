@@ -57,7 +57,7 @@ public class BodyPartFragment extends Fragment {
         // COMPLETED TF.01 TODO (1.3) Show the first image in the list of head images
         if (mImageIds != null) {
             // COMPLETED TF.02 TODO (2.3) If a list of image ids exists, set the image resource to the correct item in that list
-            imageView.setImageResource(AndroidImageAssets.getHeads().get(0));
+            imageView.setImageResource(mImageIds.get(mListIndex));
 
             // COMPLETED TF.03 TODO (3.1) Set a click listener on the image view and on a click increment the list index and set the image resource
             imageView.setOnClickListener(new View.OnClickListener() {
@@ -70,9 +70,10 @@ public class BodyPartFragment extends Fragment {
                     else {
                         mListIndex = 0;
                     }
+                    imageView.setImageResource(mImageIds.get(mListIndex));
                 }
             });
-            imageView.setImageResource(mImageIds.get(mListIndex));
+
 
         } else { // Otherwise, create a Log statement that indicates that the list was not found
             Log.v(TAG, "This fragment has a null list of image ids. ");

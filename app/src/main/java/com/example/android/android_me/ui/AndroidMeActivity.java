@@ -34,15 +34,16 @@ public class AndroidMeActivity extends AppCompatActivity {
         // COMPLETED TF.03 TODO (3.5) Only create new fragments when there is no previously saved state
         if (savedInstanceState == null) {
 
-            // COMPLETED TF.01 TODO (1.5) Create a new BodyPartFragment instance and display it using the FragmentManager
-            BodyPartFragment headFragment = new BodyPartFragment();
-
             // Add the fragment to its container using a FragmentManager and a Transaction
             FragmentManager fragmentManager = getSupportFragmentManager();
 
+            // COMPLETED TF.01 TODO (1.5) Create a new BodyPartFragment instance and display it using the FragmentManager
+            BodyPartFragment headFragment = new BodyPartFragment();
+
             // COMPLETED TF.02 TODO (2.4) Set the list of image id's for the head fragment and set the position to the second image in the list
             headFragment.setImageIds(AndroidImageAssets.getHeads());
-            headFragment.setListIndex(1);
+            int headIndex = getIntent().getIntExtra("headIndex", 0);
+            headFragment.setListIndex(headIndex);
             fragmentManager.beginTransaction()
                     .add(R.id.fl_head_container, headFragment)
                     .commit();
@@ -50,12 +51,16 @@ public class AndroidMeActivity extends AppCompatActivity {
             // COMPLETED TF.02 TODO (2.5) Create and display the body and leg BodyPartFragments
             BodyPartFragment bodyFragment = new BodyPartFragment();
             bodyFragment.setImageIds(AndroidImageAssets.getBodies());
+            int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
+            bodyFragment.setListIndex(bodyIndex);
             fragmentManager.beginTransaction()
                     .add(R.id.fl_body_container, bodyFragment)
                     .commit();
 
             BodyPartFragment legFragment = new BodyPartFragment();
             legFragment.setImageIds(AndroidImageAssets.getLegs());
+            int legIndex = getIntent().getIntExtra("legIndex", 0);
+            legFragment.setListIndex(legIndex);
             fragmentManager.beginTransaction()
                     .add(R.id.fl_leg_container, legFragment)
                     .commit();
